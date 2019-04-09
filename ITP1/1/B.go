@@ -1,16 +1,7 @@
 package main
-
-import (
-  "fmt"
-  "os"
-  "bufio"
-  "strconv"
-)
-
+import "fmt"
 func main() {
-  stdin := bufio.NewScanner(os.Stdin)
-  stdin.Scan()
-  text := stdin.Text()
-  num, _ := strconv.Atoi(text)
-  fmt.Println(num*num*num)
+var x int
+fmt.Scan(&x)
+fmt.Println(x*x*x)
 }

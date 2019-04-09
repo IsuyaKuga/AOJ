@@ -1,19 +1,24 @@
 package main
-
 import (
-  "fmt"
-  "os"
-  "bufio"
-  "strconv"
+"bufio"
+"fmt"
+"os"
+"strconv"
 )
-
+var sc = bufio.NewScanner(os.Stdin)
+func nextInt() int {
+sc.Scan()
+i, e := strconv.Atoi(sc.Text())
+if e != nil {
+panic(e)
+}
+return i
+}
 func main() {
-  stdin := bufio.NewScanner(os.Stdin)
-  stdin.Scan()
-  text := stdin.Text()
-  num, _ := strconv.Atoi(text)
-  h := num / 3600
-  m := num / 60 % 60
-  s := num - (h * 3600 + m * 60)
-  fmt.Printf("%d:%d:%d\n", h, m, s)
+sc.Split(bufio.ScanWords)
+x := nextInt()
+h := x/3600
+m := x%3600/60
+s := x%3600%60
+fmt.Printf("%d:%d:%d\n",h,m,s)
 }
