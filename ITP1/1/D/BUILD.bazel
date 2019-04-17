@@ -2,18 +2,13 @@ load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
 
 go_library(
     name = "go_default_library",
-    srcs = [
-        "A.go",
-        "B.go",
-        "C.go",
-        "D.go",
-    ],
-    importpath = "github.com/gkuga/AOJ/ITP1/1",
+    srcs = ["D.go"],
+    importpath = "github.com/gkuga/AOJ/ITP1/1/D",
     visibility = ["//visibility:private"],
 )
 
 go_binary(
-    name = "1",
+    name = "D",
     embed = [":go_default_library"],
     visibility = ["//visibility:public"],
 )
