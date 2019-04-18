@@ -1,25 +1,33 @@
 package main
 
 import (
-  "bufio"
-  "os"
-  "fmt"
-  "strings"
-  "strconv"
+	"bufio"
+	. "fmt"
+	"os"
+	"strconv"
 )
 
-func main() {
-  stdin := bufio.NewScanner(os.Stdin)
-  stdin.Scan()
-  nums := strings.Fields(stdin.Text())
-  a, _ := strconv.Atoi(nums[0])
-  b, _ := strconv.Atoi(nums[1])
-  c, _ := strconv.Atoi(nums[2])
-  fmt.Println(a,b,c)
+var sc = bufio.NewScanner(os.Stdin)
 
-  if a < b && b < c {
-    fmt.Println("Yes")
-  } else {
-    fmt.Println("No")
-  }
+func init() {
+	sc.Split(bufio.ScanWords)
+}
+
+func nextInt() int {
+	sc.Scan()
+	i, e := strconv.Atoi(sc.Text())
+	if e != nil {
+		panic(e)
+	}
+	return i
+}
+
+func main() {
+	a, b, c := nextInt(), nextInt(), nextInt()
+
+	if a < b && b < c {
+		Println("Yes")
+	} else {
+		Println("No")
+	}
 }
