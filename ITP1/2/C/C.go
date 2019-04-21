@@ -2,19 +2,13 @@ package main
 
 import (
 	. "fmt"
+	"sort"
 )
 
 func main() {
 	var a, b, c int
 	Scan(&a, &b, &c)
-	if c < b {
-		b, c = c, b
-	}
-	if b < a {
-		a, b = b, a
-	}
-	if c < b {
-		b, c = c, b
-	}
-	Println(a, b, c)
+	s := []int{a, b, c}
+	sort.Ints(s)
+	Println(s[0], s[1], s[2])
 }
